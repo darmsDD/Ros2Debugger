@@ -1,0 +1,36 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "(Attach) ros2 debugger",
+            "type": "cppdbg",
+            "request": "attach",
+            "program": "program",
+            "MIMode": "gdb",
+            "processId": "pid",
+            "useExtendedRemote": false
+        },
+        
+        {
+            "name": "(Launch) ros2 debugger",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "program",
+            "stopAtEntry": true,         
+            "cwd": "/",
+            "miDebuggerServerAddress": "localhost:3000",
+            "externalConsole": false,
+            "MIMode": "gdb"
+        }, 
+        {
+            "name": "(Launch without server) ros2 debugger",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "program",
+            "stopAtEntry": true,         
+            "cwd": "/",
+            "externalConsole": false,
+            "MIMode": "gdb"
+        }
+    ]
+}

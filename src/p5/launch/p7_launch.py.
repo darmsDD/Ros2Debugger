@@ -1,0 +1,37 @@
+from launch import LaunchDescription
+from launch.substitutions import LaunchConfiguration
+from launch_ros.actions import Node
+from launch.actions import DeclareLaunchArgument
+
+def generate_launch_description():
+
+
+    b_node = Node (
+        prefix='gdbserver localhost:3000',
+        package='p7', 
+        namespace='/',
+        name='n7_no_gdb',
+        output='screen',
+        executable='n7',
+    )
+
+    a_node = Node (
+prefix='gdbserver localhost:3000',
+
+
+
+        executable='n7',
+        package='p7',
+        namespace='/',
+        output='screen',
+        name='n7_with_gdb',
+    )
+prefix='gdbserver localhost:3000',
+    # grep -iroPh '(?<=<name>).*?(?=</name>)' './src' --include="package.xml" --exclude-dir={"micro_ros_setup","uros","examples"}
+
+
+    b_launch_description = LaunchDescription()
+    b_launch_description.add_action(b_node)
+    b_launch_description.add_action(a_node)
+
+    return b_launch_description
